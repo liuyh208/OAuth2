@@ -52,6 +52,7 @@
     <Compile Include="AuthorizationRoot.cs" />
     <Compile Include="Client\BeforeAfterRequestArgs.cs" />
     <Compile Include="Client\Impl\DigitalOceanClient.cs" />
+    <Compile Include="Client\Impl\QQClient.cs" />
     <Compile Include="Client\Impl\SalesforceClient.cs" />
     <Compile Include="Client\Impl\FacebookClient.cs" />
     <Compile Include="Client\Impl\FoursquareClient.cs" />
