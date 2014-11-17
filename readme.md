@@ -1,14 +1,10 @@
-﻿# OAuth2 #
+# OAuth2 #
 
 OAuth2 is a library for user authentication using third-party services (OAuth/OAuth2 protocol) such as Google, Facebook and so on.
 
 ## Current Version and Status ##
 
 Current version is 0.8. Status is "release candidate" - despite we already have several real life projects built with usage of this library, we will change status to "stable" only after comprehensive set of acceptance tests is ready and runs successfuly.
-
-[View recent build in Teamcity](http://teamcity.codebetter.com/viewType.html?buildTypeId=bt1045&guest=1) 
-
-[![Build Status](http://teamcity.codebetter.com/app/rest/builds/buildType:%28id:bt1045%29/statusIcon)](http://teamcity.codebetter.com/viewType.html?buildTypeId=bt1045&guest=1)
 
 ## Standard Flow ##
 
@@ -121,6 +117,7 @@ Use user info as you wish, for example, display user details:
 - VK (Vkontakte)
 - Windows Live
 - Yandex
+- QQ
 
 ## Goals ##
 
@@ -151,16 +148,6 @@ This library is dependent on:
 - Krisztián Pócza (added LinkedIn (OAuth 2) client)
 
 ## Acknowledgements ##
-
-Many thanks to [JetBrains](http://www.jetbrains.com/) company for providing free OSS licenses 
-for [**ReSharper**](http://www.jetbrains.com/resharper/) and [**dotCover**](http://www.jetbrains.com/dotcover/) - 
-these tools allow us to work on this project with pleasure!
-
-Also we glad to have opportunity to use free [**Teamcity**](http://www.jetbrains.com/teamcity/) CI server 
-provided by [Codebetter.com](http://codebetter.com/) and [JetBrains](http://www.jetbrains.com/) - 
-many thanks for supporting OSS!
-
-![JetBrains](http://www.jetbrains.com/img/banners/Codebetter300x250.png)
 
 OAuth2 optimization would never be so simple without YourKit .NET profiler! 
 We appreciate kind support of open source projects by YourKit LLC - 
