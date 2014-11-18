@@ -64,6 +64,8 @@
     <Compile Include="Client\Impl\OdnoklassnikiClient.cs" />
     <Compile Include="Client\Impl\TwitterClient.cs" />
     <Compile Include="Client\Impl\VkClient.cs" />
+    <Compile Include="Client\Impl\BaiduClient.cs" />
+    <Compile Include="Client\Impl\WeiboClient.cs" />
     <Compile Include="Client\Impl\WindowsLiveClient.cs" />
     <Compile Include="Client\Impl\YandexClient.cs" />
     <Compile Include="Client\OAuth2Client.cs" />
