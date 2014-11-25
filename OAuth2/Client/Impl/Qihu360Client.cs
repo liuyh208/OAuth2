@@ -12,7 +12,7 @@ namespace OAuth2.Client.Impl
     /// <summary>
     /// taobao  OAuth2
     /// </summary>
-    public  class Qihu360Client : OAuth2Client
+    public class Qihu360Client : OAuth2Client
     {
         public Qihu360Client(IRequestFactory factory, IClientConfiguration configuration)
             : base(factory, configuration)
