@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="AuthorizationRoot.cs" />
     <Compile Include="Client\BeforeAfterRequestArgs.cs" />
+    <Compile Include="Client\Impl\Qihu360.cs" />
+    <Compile Include="Client\Impl\NeteaseClient.cs" />
+    <Compile Include="Client\Impl\TaobaoClient.cs" />
     <Compile Include="Client\Impl\DigitalOceanClient.cs" />
     <Compile Include="Client\Impl\QQClient.cs" />
     <Compile Include="Client\Impl\SalesforceClient.cs" />
