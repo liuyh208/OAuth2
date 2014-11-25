@@ -10,19 +10,20 @@ using OAuth2.Models;
 namespace OAuth2.Client.Impl
 {
     /// <summary>
-    /// taobao  OAuth2
+    /// 京东  OAuth2
     /// </summary>
-    public class Qihu360Client : OAuth2Client
+    public class JDClient : OAuth2Client
     {
-        public Qihu360Client(IRequestFactory factory, IClientConfiguration configuration)
+        public JDClient(IRequestFactory factory, IClientConfiguration configuration)
             : base(factory, configuration)
         {
         }
 
-        private string _baseUrl = "https://openapi.360.cn";
+        private UserInfo _userInfo;
+        private string _baseUrl = "https://auth.360buy.com";
         public override string Name
         {
-            get { return "360"; }
+            get { return "jd"; }
         }
 
         protected override Endpoint AccessCodeServiceEndpoint
@@ -32,7 +33,7 @@ namespace OAuth2.Client.Impl
                 return new Endpoint
                 {
                     BaseUri = _baseUrl,
-                    Resource = "/oauth2/authorize"
+                    Resource = "/oauth/authorize"
                 };
             }
         }
@@ -44,7 +45,7 @@ namespace OAuth2.Client.Impl
                 return new Endpoint
                 {
                     BaseUri = _baseUrl,
-                    Resource = "/oauth2/access_token"
+                    Resource = "/oauth/token"
                 };
             }
         }
@@ -53,34 +54,29 @@ namespace OAuth2.Client.Impl
         {
             get
             {
-                //https://openapi.baidu.com/rest/2.0/passport/users/getLoggedInUser
-                return new Endpoint
-                {
-                    BaseUri = "hhttps://openapi.360.cn",
-                    Resource = "/user/me.json"
-                };
+                return new Endpoint();
             }
+        }
+        protected override string ParseAccessTokenResponse(string content)
+        {
+            _userInfo = ParseUserInfo(content);
+            return base.ParseAccessTokenResponse(content);
+        }
+
+        protected override UserInfo GetUserInfo()
+        {
+            return _userInfo;
         }
 
         protected override Models.UserInfo ParseUserInfo(string content)
         {
             var cnt = JObject.Parse(content);
 
-            var portrait = cnt["avatar"].Value<string>();
             var result = new UserInfo
             {
-
                 ProviderName = this.Name,
-                Id = cnt["id"].Value<string>(),
-                LastName = cnt["name"].SafeGet(t => t.Value<string>()),
-                Email = cnt["email"].Value<string>(),
-                
-                AvatarUri =
-                {
-                    Small = portrait,
-                    Normal = portrait,
-                    Large = portrait
-                }
+                Id = cnt["uid"].Value<string>(),
+                LastName = cnt["user_nick"].SafeGet(t => t.Value<string>())
             };
             return result;
         }

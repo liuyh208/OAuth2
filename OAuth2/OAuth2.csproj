@@ -52,6 +52,7 @@
     <Compile Include="AuthorizationRoot.cs" />
     <Compile Include="Client\BeforeAfterRequestArgs.cs" />
     <Compile Include="Client\Impl\Kaixin001Client.cs" />
+    <Compile Include="Client\Impl\JDClient.cs" />
     <Compile Include="Client\Impl\RenRenClient.cs" />
     <Compile Include="Client\Impl\Qihu360Client.cs" />
     <Compile Include="Client\Impl\NeteaseClient.cs" />
